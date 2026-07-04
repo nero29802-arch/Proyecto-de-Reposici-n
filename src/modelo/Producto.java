@@ -82,7 +82,7 @@ public class Producto {
         this.precio = precio;
     }
     
-    public boolean getDisponible() {
+    public boolean isDisponible() {
         return disponible;
     }
     
