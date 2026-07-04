@@ -37,7 +37,7 @@ public class Producto {
         return id;
     }
     
-    public void Setid(int id)  {
+    public void setId(int id)  {
         this.id = id;
     }
     
@@ -82,7 +82,7 @@ public class Producto {
         this.precio = precio;
     }
     
-    public boolean getDisponible() {
+    public boolean isDisponible() {
         return disponible;
     }
     
