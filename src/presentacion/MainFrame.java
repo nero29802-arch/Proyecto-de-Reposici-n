@@ -35,6 +35,7 @@ public class MainFrame extends JFrame {
         setSize(1000, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        getContentPane().setBackground(EstiloUI.COLOR_FONDO); // <-- nuevo
 
         setJMenuBar(crearMenuBar());
         add(crearToolBar(), BorderLayout.NORTH);
@@ -117,6 +118,14 @@ public class MainFrame extends JFrame {
         toolBar.add(btnEliminar);
         toolBar.add(btnOrdenar);
         toolBar.add(btnExportar);
+
+        EstiloUI.estilizarBotonPrimario(btnNuevo);
+        EstiloUI.estilizarBotonPrimario(btnGuardar);
+        EstiloUI.estilizarBotonSecundario(btnEditar);
+        EstiloUI.estilizarBotonPeligro(btnEliminar);
+        EstiloUI.estilizarBotonSecundario(btnOrdenar);
+        EstiloUI.estilizarBotonSecundario(btnExportar);
+        toolBar.setBackground(EstiloUI.COLOR_FONDO_ALT);
         return toolBar;
     }
 
@@ -190,6 +199,16 @@ public class MainFrame extends JFrame {
         panel.add(panelInferior, BorderLayout.SOUTH);
 
         refrescarTabla(negocio.listar());
+
+        EstiloUI.estilizarBotonSecundario(btnBuscar);
+        EstiloUI.estilizarBotonSecundario(btnOrdenNombre);
+        EstiloUI.estilizarBotonSecundario(btnOrdenPrecio);
+        EstiloUI.estilizarBotonSecundario(btnOrdenCantidad);
+        EstiloUI.estilizarBotonSecundario(btnEditarSel);
+        EstiloUI.estilizarBotonPeligro(btnEliminarSel);
+        panel.setBackground(EstiloUI.COLOR_FONDO);
+        panelSuperior.setBackground(EstiloUI.COLOR_FONDO);
+        panelInferior.setBackground(EstiloUI.COLOR_FONDO);
         return panel;
     }
 
@@ -312,6 +331,7 @@ public class MainFrame extends JFrame {
     // Main
     
     public static void main(String[] args) {
+        EstiloUI.aplicarLookAndFeel();
         SwingUtilities.invokeLater(() -> new MainFrame().setVisible(true));
     }
 }

@@ -109,6 +109,13 @@ public class ProductoPanel extends JPanel {
         panelBotones.add(btnGuardar);
         panelBotones.add(btnEditar);
         panelBotones.add(btnLimpiar);
+
+        EstiloUI.estilizarBotonPrimario(btnGuardar);
+        EstiloUI.estilizarBotonSecundario(btnEditar);
+        EstiloUI.estilizarBotonSecundario(btnLimpiar);
+        setBackground(EstiloUI.COLOR_FONDO);
+        formulario.setBackground(EstiloUI.COLOR_FONDO);
+        panelBotones.setBackground(EstiloUI.COLOR_FONDO);
         add(panelBotones, BorderLayout.SOUTH);
 
         btnGuardar.addActionListener(this::onGuardar);
